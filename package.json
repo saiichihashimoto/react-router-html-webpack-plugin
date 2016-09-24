@@ -1,0 +1,74 @@
+{
+  "name": "react-router-html-webpack-plugin",
+  "description": "Marrying react-router with html-webpack-plugin",
+  "homepage": "https://github.com/saiichihashimoto/react-router-html-webpack-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/saiichihashimoto/react-router-html-webpack-plugin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saiichihashimoto/react-router-html-webpack-plugin.git"
+  },
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "run-s build:*",
+    "build:src": "babel src --out-dir dist --source-maps",
+    "clean": "rm -rf dist",
+    "format": "run-s format:*",
+    "format-committed": "run-s format:*:committed",
+    "postformat-committed": "git diff --staged --name-only --diff-filter=ACMRTUXB | xargs -n 1 git add",
+    "format:js": "find . \\( -name '*.js' \\) -and -not \\( -path './node_modules/*' -or -path './generators/*' \\) | xargs -n 1 eslint --fix --color",
+    "format:js:committed": "git diff --staged --name-only --diff-filter=ACMRTUXB | grep '\\.js$' | xargs -n 1 eslint --fix --color",
+    "format:json": "find . \\( -name '*.json' -or -name '.*rc' \\) -and -not \\( -path './node_modules/*' -or -path './generators/*' \\) | xargs -n 1 jsonlint --in-place",
+    "format:json:committed": "git diff --staged --name-only --diff-filter=ACMRTUXB | grep '\\(\\.json$\\)\\|\\(\\.[a-z]*rc$\\)' | xargs -n 1 jsonlint --in-place",
+    "format:package_json": "find . -name 'package.json' -and -not \\( -path './node_modules/*' -or -path './generators/*' \\) | sed 's/package.json//g' | xargs -n 1 -I {} sh -c 'cd {}; sort-package-json'",
+    "format:package_json:committed": "git diff --staged --name-only --diff-filter=ACMRTUXB | grep 'package\\.json$' | sed 's/package.json/./g' | xargs -n 1 -I {} sh -c 'cd {}; sort-package-json'",
+    "lint": "run-s lint:*",
+    "lint-committed": "run-s lint:*:committed",
+    "lint:js": "eslint . --color --ignore-path .gitignore",
+    "lint:js:committed": "git diff --staged --name-only --diff-filter=ACMRTUXB | grep '\\.js$' | xargs -n 1 eslint --color",
+    "lint:json": "find . \\( -name '*.json' -or -name '.*rc' \\) -and -not \\( -path './node_modules/*' -or -path './generators/*' \\) | xargs -n 1 jsonlint --quiet",
+    "lint:json:committed": "git diff --staged --name-only --diff-filter=ACMRTUXB | grep '\\(\\.json$\\)\\|\\(\\.[a-z]*rc$\\)' | xargs -n 1 jsonlint --quiet",
+    "prerelease": "semantic-release pre && npm run build",
+    "release": "run-s release:*",
+    "postrelease": "semantic-release post",
+    "release:npm": "npm publish",
+    "start": "npm run build:src -- --watch",
+    "test": "echo no tests"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "pre-commit": "npm run format-committed && npm run lint-committed",
+      "commit-msg": "validate-commit-msg"
+    },
+    "validate-commit-msg": {
+      "helpMessage": "Install commitizen and use `git cz` instead of `git commit` https://github.com/commitizen/cz-cli#installing-the-command-line-tool"
+    }
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-plugin-transform-class-properties": "^6.11.5",
+    "babel-preset-es2015": "^6.13.2",
+    "cz-conventional-changelog": "^1.2.0",
+    "eslint": "^3.3.0",
+    "eslint-config-xo": "^0.15.3",
+    "eslint-plugin-babel": "^3.3.0",
+    "ghooks": "^1.3.2",
+    "jsonlint": "^1.6.2",
+    "npm-run-all": "^3.0.0",
+    "semantic-release": "^4.3.5",
+    "sort-package-json": "^1.4.0",
+    "stylefmt": "^4.2.3",
+    "stylelint": "^7.2.0",
+    "stylelint-config-standard": "^13.0.0",
+    "validate-commit-msg": "^2.8.0"
+  },
+  "engines": {
+    "node": "^6.1.0",
+    "npm": "^3.9.0"
+  }
+}
