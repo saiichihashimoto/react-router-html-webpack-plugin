@@ -7,9 +7,8 @@
 [![semantic-release][semantic-release-badge]][semantic-release-url]
 [![Commitizen][commitizen-badge]][commitizen-url]
 
-**This is a work in progress and hasn't been implemented yet!!!**
-
-**It will not work as intended yet!!!**
+# **This is a work in progress and hasn't been implemented yet!!!**
+# **It will not work as intended!!!**
 
 - You use [React Router][react-router-url]
 - You use [webpack][webpack-url]
