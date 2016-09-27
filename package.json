@@ -58,6 +58,7 @@
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
     "codecov": "^1.0.1",
+    "cracks": "^3.1.2",
     "cz-conventional-changelog": "^1.2.0",
     "eslint": "^3.6.1",
     "eslint-config-xo": "^0.16.0",
@@ -77,5 +78,15 @@
   "engines": {
     "node": "^6.1.0",
     "npm": "^3.9.0"
+  },
+  "release": {
+    "verifyRelease": {
+      "path": "cracks",
+      "paths": [
+        "test",
+        "package.json"
+      ],
+      "silent": true
+    }
   }
 }
