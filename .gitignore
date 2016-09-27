@@ -46,3 +46,4 @@ android/keystores/debug.keystore
 .env
 coverage/*
 dist/*
+test/.tmp*

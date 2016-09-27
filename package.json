@@ -35,7 +35,7 @@
     "release:npm": "npm publish",
     "start": "npm run build:src -- --watch",
     "test": "run-s test:*",
-    "test:unit": "istanbul cover _mocha --report lcovonly -- -R spec --compilers js:babel-register && codecov"
+    "test:unit": "istanbul cover _mocha -- -R spec --compilers js:babel-register && codecov"
   },
   "config": {
     "commitizen": {
@@ -49,6 +49,9 @@
       "helpMessage": "Install commitizen and use `git cz` instead of `git commit` https://github.com/commitizen/cz-cli#installing-the-command-line-tool"
     }
   },
+  "dependencies": {
+    "html-webpack-plugin": "^2.22.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.14.0",
     "babel-eslint": "^7.0.0",
@@ -60,6 +63,7 @@
     "codecov": "^1.0.1",
     "cracks": "^3.1.2",
     "cz-conventional-changelog": "^1.2.0",
+    "es6-promisify": "^4.1.0",
     "eslint": "^3.6.1",
     "eslint-config-xo": "^0.16.0",
     "eslint-plugin-babel": "^3.3.0",
@@ -73,7 +77,12 @@
     "stylefmt": "^4.2.3",
     "stylelint": "^7.2.0",
     "stylelint-config-standard": "^13.0.0",
-    "validate-commit-msg": "^2.8.0"
+    "validate-commit-msg": "^2.8.0",
+    "webpack": "^1.13.2",
+    "webpack-merge": "^0.14.1"
+  },
+  "peerDependencies": {
+    "webpack": "^1.13.2"
   },
   "engines": {
     "node": "^6.1.0",
