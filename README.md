@@ -51,7 +51,7 @@ You can pass a hash of configuration options to ReactRouterHtmlWebpackPlugin, ex
     - `[route].html` or `[route]/index.html` writes to `<output.path>/index.html`
     - `subdirectory/[route]/index.html` writes to `<output.path>/subdirectory/index.html`
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/saiichihashimoto/react-router-html-webpack-plugin.svg?style=flat-square&maxAge=2592000)
+[codecov-badge]: https://img.shields.io/codecov/c/github/saiichihashimoto/react-router-html-webpack-plugin.svg?style=flat-square&maxAge=2592000
 [codecov-url]: https://codecov.io/gh/saiichihashimoto/react-router-html-webpack-plugin
 [commitizen-badge]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square&maxAge=2592000
 [commitizen-url]: http://commitizen.github.io/cz-cli
