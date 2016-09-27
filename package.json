@@ -33,7 +33,6 @@
     "release": "run-s release:*",
     "postrelease": "semantic-release post",
     "release:npm": "npm publish",
-    "start": "npm run build:src -- --watch",
     "test": "run-s test:*",
     "test:unit": "istanbul cover _mocha -- -R spec --compilers js:babel-register && codecov"
   },
