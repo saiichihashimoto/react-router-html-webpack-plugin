@@ -34,7 +34,8 @@
     "postrelease": "semantic-release post",
     "release:npm": "npm publish",
     "start": "npm run build:src -- --watch",
-    "test": "echo no tests"
+    "test": "run-s test:*",
+    "test:unit": "istanbul cover _mocha --report lcovonly -- -R spec --compilers js:babel-register && codecov"
   },
   "config": {
     "commitizen": {
@@ -53,12 +54,18 @@
     "babel-eslint": "^7.0.0",
     "babel-plugin-transform-class-properties": "^6.11.5",
     "babel-preset-es2015": "^6.13.2",
+    "babel-register": "^6.14.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "codecov": "^1.0.1",
     "cz-conventional-changelog": "^1.2.0",
     "eslint": "^3.6.1",
     "eslint-config-xo": "^0.16.0",
     "eslint-plugin-babel": "^3.3.0",
     "ghooks": "^1.3.2",
+    "istanbul": "^0.4.5",
     "jsonlint": "^1.6.2",
+    "mocha": "^3.1.0",
     "npm-run-all": "^3.0.0",
     "semantic-release": "^4.3.5",
     "sort-package-json": "^1.4.0",
