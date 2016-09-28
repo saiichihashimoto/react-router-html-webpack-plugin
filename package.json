@@ -13,7 +13,7 @@
     "prebuild": "npm run clean",
     "build": "run-s build:*",
     "build:src": "babel src --out-dir dist --source-maps",
-    "clean": "rm -rf dist",
+    "clean": "rm -rf dist test/.tmp*",
     "format": "run-s format:*",
     "format-committed": "run-s format:*:committed",
     "postformat-committed": "git diff --staged --name-only --diff-filter=ACMRTUXB | xargs -n 1 git add",

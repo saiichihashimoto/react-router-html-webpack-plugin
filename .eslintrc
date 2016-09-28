@@ -6,6 +6,10 @@
     "node": true
   },
   "rules": {
+    "arrow-parens": [
+      2,
+      "always"
+    ],
     "babel/object-curly-spacing": 0,
     "babel/object-shorthand": 0,
     "comma-dangle": [
