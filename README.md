@@ -44,7 +44,7 @@ var webpackConfig = {
 
 You can pass a hash of configuration options to ReactRouterHtmlWebpackPlugin, exactly like [HTML Webpack Plugin][html-webpack-plugin-configuration-url]. Allowed values are the same except for some differences:
 
-- `routes`: The routes file to generate routes from. Defaults to `routes.js`.
+- `routes`: The routes file to generate routes from. Defaults to `null`. Ignores routes and acts exactly like [HTML Webpack Plugin][html-webpack-plugin-url] when `null`.
 - `filename`: For each route, the file to write the HTML to. Defaults to `['[route].html', '[route]/index.html']`. An array of strings writes to each file. For example:
     - With the default configuration, matching `foo/bar` writes to both `<output.path>/foo/bar.html` and `<output.path>/foo/bar/index.html`
   - In the case of the base route (ie `/`), this value will make assumptions to produce sane values. For example:
