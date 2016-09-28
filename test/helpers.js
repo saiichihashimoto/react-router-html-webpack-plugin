@@ -22,10 +22,11 @@ function deleteFolder(folder) {
 }
 
 export function runWebpack(config) {
-	const outputPath = path.resolve(__dirname, '.tmp-' + Math.random());
+	const newConfig  = merge(webpackConfig, { output: { path: path.resolve(__dirname, '.tmp-' + Math.random()) } }, config);
+	const outputPath = newConfig.output.path;
 
 	return deleteFolder(outputPath)
-		.then(() => promisify(webpack)(merge(webpackConfig, { output: { path: outputPath } }, config)))
+		.then(() => promisify(webpack)(newConfig))
 		.then((stats) => {
 			if (stats.compilation.errors.length) {
 				throw stats.compilation.errors[0];
