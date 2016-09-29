@@ -7,13 +7,10 @@
 [![semantic-release][semantic-release-badge]][semantic-release-url]
 [![Commitizen][commitizen-badge]][commitizen-url]
 
-# **This is a work in progress and hasn't been implemented yet!!!**
-# **It will not work as intended!!!**
-
 - You use [React Router][react-router-url]
 - You use [webpack][webpack-url]
-- You want a full static website that you can host on something like [GitHub Pages][github-pages-url]
-- You like [HTML Webpack Plugin][html-webpack-plugin-url] and want a drop-in replacement html files from [React Router][react-router-url] routes
+- You have a full static website hosted on something like [GitHub Pages][github-pages-url]
+- You use [HTML Webpack Plugin][html-webpack-plugin-url] and want a drop-in replacement to make the static html files from [React Router][react-router-url] routes
 - You want **React Router HTML Webpack Plugin** :smile:
 
 ## Installation
@@ -28,21 +25,47 @@ $ npm install react-router-html-webpack-plugin --save-dev
 Basic usage copies [HTML Webpack Plugin][html-webpack-plugin-usage-url]:
 
 ```javascript
-var ReactRouterHtmlWebpackPlugin = require('react-router-html-webpack-plugin');
-var webpackConfig = {
+// webpack.config.js
+import ReactRouterHtmlWebpackPlugin from 'react-router-html-webpack-plugin';
+export default {
   // ...
   plugins: [
     // ...
-    new ReactRouterHtmlWebpackPlugin(),
+    new ReactRouterHtmlWebpackPlugin({ routes: 'routes.js' }),
     // ...
   ],
   // ...
 };
 ```
 
+```javascript
+// routes.js
+import React from 'react';
+import Route from 'react-router/lib/Route';
+
+import DummyComponent from './DummyComponent';
+
+export default (
+	<Route path="/">
+		<Route path="foo" component={DummyComponent} />
+		<Route path="bar" component={DummyComponent} />
+	</Route>
+);
+```
+
+The resulting files will be:
+
+```
+index.html
+foo.html
+foo/index.html
+bar.html
+bar/index.html
+```
+
 ## Configuration
 
-You can pass a hash of configuration options to ReactRouterHtmlWebpackPlugin, exactly like [HTML Webpack Plugin][html-webpack-plugin-configuration-url]. Allowed values are the same except for some differences:
+You can pass a hash of configuration options to React Router Html Webpack Plugin, exactly like [HTML Webpack Plugin][html-webpack-plugin-configuration-url]. Allowed values are the same except for some differences:
 
 - `routes`: The routes file to generate routes from. Ignores routes and acts exactly like [HTML Webpack Plugin][html-webpack-plugin-url] when omitted.
 - `filename`: For each route, the file to write the HTML to. Defaults to `['[route].html', '[route]/index.html']` if `routes` is set. An array of strings writes to each file. For example:
