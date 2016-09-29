@@ -51,20 +51,20 @@ You can pass a hash of configuration options to ReactRouterHtmlWebpackPlugin, ex
     - `[route].html` or `[route]/index.html` writes to `<output.path>/index.html`
     - `subdirectory/[route]/index.html` writes to `<output.path>/subdirectory/index.html`
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/saiichihashimoto/react-router-html-webpack-plugin.svg?style=flat-square&maxAge=2592000
+[codecov-badge]: https://img.shields.io/codecov/c/github/saiichihashimoto/react-router-html-webpack-plugin.svg?style=flat-square&maxAge=86400
 [codecov-url]: https://codecov.io/gh/saiichihashimoto/react-router-html-webpack-plugin
-[commitizen-badge]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square&maxAge=2592000
+[commitizen-badge]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square&maxAge=86400
 [commitizen-url]: http://commitizen.github.io/cz-cli
 [github-pages-url]: https://pages.github.com
 [html-webpack-plugin-configuration-url]: https://github.com/ampedandwired/html-webpack-plugin/blob/master/README.md#configuration
 [html-webpack-plugin-usage-url]: https://github.com/ampedandwired/html-webpack-plugin/blob/master/README.md#basic-usage
 [html-webpack-plugin-url]: https://www.npmjs.com/package/html-webpack-plugin
-[npm-downloads-badge]: https://img.shields.io/npm/dm/react-router-html-webpack-plugin.svg?style=flat-square&maxAge=2592000
-[npm-version-badge]: https://img.shields.io/npm/v/react-router-html-webpack-plugin.svg?style=flat-square&maxAge=2592000
+[npm-downloads-badge]: https://img.shields.io/npm/dm/react-router-html-webpack-plugin.svg?style=flat-square&maxAge=86400
+[npm-version-badge]: https://img.shields.io/npm/v/react-router-html-webpack-plugin.svg?style=flat-square&maxAge=86400
 [npm-url]: https://www.npmjs.com/package/react-router-html-webpack-plugin
 [react-router-url]: https://www.npmjs.com/package/react-router
 [semantic-release-badge]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square
 [semantic-release-url]: https://github.com/semantic-release/semantic-release
-[travis-badge]: https://img.shields.io/travis/saiichihashimoto/react-router-html-webpack-plugin/master.svg?style=flat-square&maxAge=2592000
+[travis-badge]: https://img.shields.io/travis/saiichihashimoto/react-router-html-webpack-plugin/master.svg?style=flat-square&maxAge=86400
 [travis-url]: https://travis-ci.org/saiichihashimoto/react-router-html-webpack-plugin
 [webpack-url]: http://webpack.github.io
