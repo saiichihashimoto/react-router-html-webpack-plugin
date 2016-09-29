@@ -13,7 +13,7 @@
     "prebuild": "npm run clean",
     "build": "run-s build:*",
     "build:src": "babel src --out-dir dist --source-maps",
-    "clean": "rm -rf dist test/.tmp*",
+    "clean": "rm -rf dist",
     "format": "run-s format:*",
     "format-committed": "run-s format:*:committed",
     "postformat-committed": "git diff --staged --name-only --diff-filter=ACMRTUXB | xargs -n 1 git add",
@@ -34,7 +34,7 @@
     "postrelease": "semantic-release post",
     "release:npm": "npm publish",
     "test": "run-s test:*",
-    "test:unit": "istanbul cover _mocha -- -R spec --require babel-register && codecov"
+    "test:unit": "istanbul cover -x *.test.js _mocha -- --async-only --require babel-register --reporter spec --timeout 3000 --slow 1500 \"./{,!(node_modules)/**/}*.test.js\" && codecov"
   },
   "config": {
     "commitizen": {
@@ -49,7 +49,9 @@
     }
   },
   "dependencies": {
-    "html-webpack-plugin": "^2.22.0"
+    "html-webpack-plugin": "^2.22.0",
+    "lodash.uniq": "^4.5.0",
+    "react-router-to-array": "^0.1.2"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
