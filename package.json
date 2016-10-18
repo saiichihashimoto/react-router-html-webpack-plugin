@@ -83,7 +83,7 @@
     "stylelint-config-standard": "^13.0.0",
     "validate-commit-msg": "^2.8.2",
     "webpack": "^1.13.2",
-    "webpack-merge": "^0.14.1"
+    "webpack-merge": "^0.15.0"
   },
   "peerDependencies": {
     "react": "^15.3.2",
